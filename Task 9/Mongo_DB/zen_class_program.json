@@ -1,0 +1,70 @@
+Users Collection:
+json
+Copy code
+{
+    "_id": ObjectId,
+    "name": String,
+    "email": String,
+    "mentors": [ObjectId],
+    "tasks_solved": [{
+        "task_id": ObjectId,
+        "solved_date": Date
+    }],
+    "attendance": [{
+        "date": Date,
+        "present": Boolean
+    }]
+}
+Codekata Collection:
+json
+Copy code
+{
+    "_id": ObjectId,
+    "user_id": ObjectId,
+    "task_id": ObjectId,
+    "date_completed": Date
+}
+Attendance Collection:
+json
+Copy code
+{
+    "_id": ObjectId,
+    "user_id": ObjectId,
+    "date": Date,
+    "present": Boolean
+}
+Topics Collection:
+json
+Copy code
+{
+    "_id": ObjectId,
+    "name": String,
+    "month": String
+}
+Tasks Collection:
+json
+Copy code
+{
+    "_id": ObjectId,
+    "topic_id": ObjectId,
+    "name": String,
+    "description": String,
+    "deadline": Date
+}
+Company_Drives Collection:
+json
+Copy code
+{
+    "_id": ObjectId,
+    "name": String,
+    "date": Date,
+    "students_appeared": [ObjectId]
+}
+Mentors Collection:
+json
+Copy code
+{
+    "_id": ObjectId,
+    "name": String,
+    "mentee_count": Number
+}
