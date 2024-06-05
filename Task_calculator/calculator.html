@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="title">DOM Calculator</h1>
+        <p id="description">This is a simple DOM calculator for basic arithmetic operations.</p>
+        
+        <div class="row">
+            <div class="col">
+                <input type="text" id="result" class="form-control" readonly>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <button class="btn btn-primary" id="1" onclick="addToDisplay('1')">1</button>
+                <button class="btn btn-primary" id="2" onclick="addToDisplay('2')">2</button>
+                <button class="btn btn-primary" id="3" onclick="addToDisplay('3')">3</button>
+                <button class="btn btn-primary" id="add" onclick="addToDisplay('+')">+</button>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <button class="btn btn-primary" id="4" onclick="addToDisplay('4')">4</button>
+                <button class="btn btn-primary" id="5" onclick="addToDisplay('5')">5</button>
+                <button class="btn btn-primary" id="6" onclick="addToDisplay('6')">6</button>
+                <button class="btn btn-primary" id="subtract" onclick="addToDisplay('-')">-</button>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <button class="btn btn-primary" id="7" onclick="addToDisplay('7')">7</button>
+                <button class="btn btn-primary" id="8" onclick="addToDisplay('8')">8</button>
+                <button class="btn btn-primary" id="9" onclick="addToDisplay('9')">9</button>
+                <button class="btn btn-primary" id="multiply" onclick="addToDisplay('*')">*</button>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <button class="btn btn-primary" id="clear" onclick="clearDisplay()">C</button>
+                <button class="btn btn-primary" id="0" onclick="addToDisplay('0')">0</button>
+                <button class="btn btn-primary" id="decimal" onclick="addToDisplay('.')">.</button>
+                <button class="btn btn-primary" id="divide" onclick="addToDisplay('/')">/</button>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <button class="btn btn-primary" id="equal" onclick="calculate()">=</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function addToDisplay(value) {
+            document.getElementById('result').value += value;
+        }
+
+        function clearDisplay() {
+            document.getElementById('result').value = '';
+        }
+
+        function calculate() {
+            try {
+                var result = eval(document.getElementById('result').value);
+                document.getElementById('result').value = result;
+            } catch (error) {
+                alert('Invalid expression');
+            }
+        }
+    </script>
+
+    <script src="https://app.zenclass.in/sheets/v1/js/zen/suite/bundle.js"></script>
+</body>
+</html>
